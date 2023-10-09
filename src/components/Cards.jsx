@@ -1,7 +1,8 @@
 import React from "react";
 
-const Cards = ({ products, getCart }) => {
+const Cards = ({ products, getCart , cart, setCart}) => {
   console.log("component is loading");
+
 
   if (JSON.stringify(products !== "[]")) {
     return (
@@ -22,7 +23,7 @@ const Cards = ({ products, getCart }) => {
                 <button
                   className="my-2 text-[13px] bg-black text-white w-24 h-7 rounded-lg border-none hover:drop-shadow hover:scale-110 duration-75"
                   type="button"
-                  onClick={()=>{getCart()}}
+                  onClick={()=>{getCart(setCart(cart+1))}}
                 >
                   Add to Cart
                 </button>
